@@ -1,0 +1,67 @@
+.steps-list {
+  --_flow-spacer: 2em;
+  --_text-color: var(--clr-p-blue-200);
+  --_icon-border-color: var(--clr-n-white-100);
+  --_icon-background-color: transparent;
+  --_icon-color: var(--clr-n-alabaster-100);
+  --_step-number-color: var(--_text-color);
+  --_step-title-color: var(--clr-n-alabaster-100);
+  list-style: none;
+  margin: 0;
+  padding-left: 1.875em;
+  padding-top: 2.5em;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 250ms ease;
+  }
+
+  &__step[aria-current="step"] {
+    --_icon-background-color: var(--clr-p-blue-100);
+    --_icon-border-color: var(--_icon-background-color);
+    --_icon-color: var(--clr-p-blue-900);
+  }
+
+  &__link:hover {
+    --_scale: 1.1;
+  }
+
+  &__link::before {
+    content: counter(list-item);
+    display: grid;
+    place-items: center;
+    width: 35px;
+    aspect-ratio: 1;
+    margin-right: 1em;
+    border: 1px solid var(--_icon-border-color);
+    border-radius: 50%;
+    background-color: var(--_icon-background-color);
+    color: var(--_icon-color);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-medium);
+    scale: var(--_scale);
+    transform-origin: center center;
+    transition: all 250ms ease;
+  }
+
+  &__step-text,
+  &__step-number {
+    display: block;
+  }
+
+  &__step-number {
+    color: var(--_step-number-color);
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-300);
+  }
+
+  &__step-title {
+    color: var(--_step-title-color);
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-400);
+  }
+
+}

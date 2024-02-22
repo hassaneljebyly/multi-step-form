@@ -1,0 +1,32 @@
+.cta-button {
+  --_btn-background-color: var(--clr-p-blue-900);
+  --_btn-color: var(--clr-n-white-100);
+  min-width: 120px;
+  padding: .85em 1.7em;
+  font-size: var(--fs-400);
+  font-weight: var(--fw-medium);
+  border: 0px;
+  border-radius: 10px;
+  background-color: var(--_btn-background-color);
+  color: var(--_btn-color);
+  cursor: pointer;
+  transition: all 250ms ease;
+
+  &--contained {
+    &:hover {
+      --_btn-background-color: var(--clr-p-blue-400);
+      opacity: 0.6;
+    }
+  }
+
+  &--text {
+    --_btn-background-color: none;
+    --_btn-color: var(--clr-n-gray-400);
+
+    &:hover {
+      --_btn-color: var(--clr-p-blue-900);
+    }
+  }
+
+
+}

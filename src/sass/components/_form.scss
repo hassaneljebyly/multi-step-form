@@ -1,0 +1,19 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__cta-button-group {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__step-1 {
+    max-width: 450px;
+  }
+
+  &__step-1>* {
+    display: block;
+    width: 100%;
+  }
+}

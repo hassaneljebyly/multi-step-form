@@ -1,0 +1,30 @@
+@use "../abstracts/variables" as *;
+
+:root {
+
+  /* colors */
+  @each $color-name, $hsl-value in $colors {
+    --clr-#{$color-name}: #{$hsl-value};
+  }
+
+  /* font family */
+  --ff-primary: "#{$font-family}";
+
+  /* font sizes */
+  @each $font-size-name, $size in $font-sizes {
+    --#{$font-size-name}: #{$size};
+  }
+
+  /* font weights */
+  @each $weight-name, $weight in $font-weights {
+    --#{$weight-name}: #{$weight};
+  }
+
+  /* breakpoints */
+  @each $breakpoints, $size in $breakpoints {
+    --#{$breakpoints}: #{$size};
+  }
+
+  font-size: 16px;
+  font-family: "#{$font-family}";
+}
