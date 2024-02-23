@@ -1,7 +1,13 @@
+@use '../abstracts/mixins' as *;
+
 .container {
   --_max-width: 1440px;
   width: min(var(--_max-width), 100% - var(--container-padding-x, 1em));
   margin-inline: auto;
+
+  @include mq(tablet, up) {
+    --container-padding-x: 0;
+  }
 }
 
 .container--full-center {

@@ -41,15 +41,15 @@ $font-family : "Ubuntu";
 // ### Font sizes
 
 $font-sizes: (
-  "fs-100": clamp(0.51rem, -0.14vw + 0.55rem, 0.42rem),
-  "fs-200": clamp(0.64rem, -0.12vw + 0.67rem, 0.56rem),
-  "fs-300": clamp(0.8rem, -0.08vw + 0.82rem, 0.75rem),
+  "fs-100": clamp(0.51rem, -0.13vw + 0.54rem, 0.42rem),
+  "fs-200": clamp(0.64rem, -0.11vw + 0.66rem, 0.56rem),
+  "fs-300": clamp(0.8rem, -0.07vw + 0.81rem, 0.75rem),
   "fs-400": clamp(1rem, 0vw + 1rem, 1rem),
-  "fs-500": clamp(1.25rem, 0.13vw + 1.22rem, 1.33rem),
-  "fs-600": clamp(1.56rem, 0.33vw + 1.48rem, 1.78rem),
-  "fs-700": clamp(1.95rem, 0.64vw + 1.79rem, 2.37rem),
-  "fs-800": clamp(2.44rem, 1.1vw + 2.17rem, 3.16rem),
-  "fs-900": clamp(3.05rem, 1.78vw + 2.61rem, 4.21rem),
+  "fs-500": clamp(1.25rem, 0.12vw + 1.23rem, 1.33rem),
+  "fs-600": clamp(1.56rem, 0.31vw + 1.5rem, 1.78rem),
+  "fs-700": clamp(1.95rem, 0.59vw + 1.83rem, 2.37rem),
+  "fs-800": clamp(2.44rem, 1.02vw + 2.24rem, 3.16rem),
+  "fs-900": clamp(3.05rem, 1.65vw + 2.72rem, 4.21rem),
 );
 
 // ### Font weights
@@ -62,8 +62,12 @@ $font-weights: (
 
 // ### Break Points
 
+$base-font-size : 16; // px
+
 $breakpoints: (
-  'breakpoint-small': 767px,
-  'breakpoint-medium': 992px,
-  'breakpoint-large': 1200px,
-);
+  "mobile-sm": #{calc(325 / $base-font-size)}em,
+  "mobile": #{calc(450 / $base-font-size)}em,
+  "tablet": #{calc(790 / $base-font-size)}em,
+  "desktop": #{calc(980 / $base-font-size)}em,
+  "wide": #{calc(1300 / $base-font-size)}em,
+  )

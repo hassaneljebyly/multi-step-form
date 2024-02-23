@@ -1,0 +1,45 @@
+@use '../abstracts/mixins' as *;
+
+.wrapper {
+  --_w-padding-x: 1em;
+  --_w-padding-y: 1em;
+  --_w-height: 600px;
+  --_w-border-radius: 15px;
+  --_w-side-panel-min-height: 173px;
+  --_w-background-color: var(--clr-n-white-100);
+  --_w-box-shadow: var(--clr-n-gray-200) 0px 8px 24px;
+  --_w-flex-direction: row;
+  --_column-left-max-width: 272px;
+
+  display: flex;
+  flex-direction: var(--_w-flex-direction);
+  padding-inline: var(--_w-padding-x);
+  padding-block: var(--_w-padding-y);
+  max-width: 943px;
+  width: 100%;
+  height: var(--_w-height);
+  border-radius: var(--_w-border-radius);
+  background-color: var(--_w-background-color);
+  box-shadow: var(--_w-box-shadow);
+
+  @include mq(tablet, up) {
+    --_w-flex-direction: column;
+    --_column-left-max-width: none;
+    --_w-padding-x: 0;
+    --_w-padding-y: 0;
+    --_w-height: 100dvh;
+    --_w-background-color: transparent;
+    box-shadow: none;
+  }
+
+
+  &__column--left {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: var(--_column-left-max-width);
+  }
+
+  &__column--right {
+    width: 100%;
+  }
+}

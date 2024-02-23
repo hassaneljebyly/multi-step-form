@@ -2,82 +2,70 @@ function App() {
   return (
     <>
       <div className="container container--full-center">
-        <div className="form-wrapper">
+        <div className="wrapper">
           {/******************************************** Sidebar ********************************************/}
-          <div className="form-wrapper__steps-panel ">
-            <div className="form-wrapper__svg"></div>
-            <ul className="form-wrapper__steps-list steps-list flow">
-              <li className="steps-list__step">
-                <a href="#" className="steps-list__link">
-                  <span className="steps-list__step-text">
-                    <span className="steps-list__step-number">Step 1</span>
-                    <span className="steps-list__step-title">Your info</span>
-                  </span>
-                </a>
+          <div className="side-panel wrapper__column wrapper__column--left" aria-hidden="true">
+            <div className="side-panel__svg"></div>
+            <ul className="steps-list side-panel__steps-list flow">
+              <li className="steps-list__step steps-list__step--current">
+                <span className="steps-list__step-icon">1</span>
+                <span className="steps-list__step-number">Step 1</span>
+                <span className="steps-list__step-title">Your info</span>
               </li>
               <li className="steps-list__step">
-                <a href="#" className="steps-list__link">
-                  <span className="steps-list__step-text">
-                    <span className="steps-list__step-number">Step 2</span>
-                    <span className="steps-list__step-title">Select plan</span>
-                  </span>
-                </a>
+                <span className="steps-list__step-icon">2</span>
+                <span className="steps-list__step-number">Step 2</span>
+                <span className="steps-list__step-title">Select plan</span>
               </li>
               <li className="steps-list__step">
-                <a href="#" className="steps-list__link">
-                  <span className="steps-list__step-text">
-                    <span className="steps-list__step-number">Step 3</span>
-                    <span className="steps-list__step-title">Add-ons</span>
-                  </span>
-                </a>
+                <span className="steps-list__step-icon">3</span>
+                <span className="steps-list__step-number">Step 3</span>
+                <span className="steps-list__step-title">Add-ons</span>
               </li>
               <li className="steps-list__step">
-                <a href="#" className="steps-list__link">
-                  <span className="steps-list__step-text">
-                    <span className="steps-list__step-number">Step 4</span>
-                    <span className="steps-list__step-title">Summary</span>
-                  </span>
-                </a>
+                <span className="steps-list__step-icon">4</span>
+                <span className="steps-list__step-number">Step 4</span>
+                <span className="steps-list__step-title">Summary</span>
               </li>
             </ul>
           </div>
           {/******************************************** Form ********************************************/}
-          <form className="form form-wrapper__form">
+          <form className="form wrapper__column wrapper__column--right">
             <div className="form__inputs">
               {/********************* Form step-1 *********************/}
-              <fieldset className="form__step-1 flow">
+              <fieldset className="form__step form__step--1 flow">
                 <legend className="form__step-header">
-                  <h2 className="form__title | p-heading">Personal info</h2>
+                  <h2 className="form__title">Personal info</h2>
                   <p className="form__body">Please provide your name, email address, and phone number.</p>
                 </legend>
                 {/*  */}
-                <label className="form__labels" htmlFor="name-input">
-                  Name
-                  <span className="form__error-text" id="name-input-error">
+                <label className="form__input-container input" htmlFor="name-input">
+                  <span className="form__label input__label">Name</span>
+                  <span className="form__error input__error" id="name-input-error">
                     error text
                   </span>
+                  <input className="form__input input__text-field" type="text" placeholder="e.g. Stephen King" name="name" id="name-input" aria-describedby="name-input-error" />
                 </label>
-                <input className="form__input" type="text" placeholder="e.g. Stephen King" name="name" id="name-input" aria-describedby="name-input-error" />
                 {/*  */}
-                <label className="form__labels" htmlFor="email-input">
-                  Email Address
-                  <span className="form__error-text" id="email-input-error">
+                <label className="form__input-container input" htmlFor="email-input">
+                  <span className="form__label input__label">Email Address</span>
+                  <span className="form__error input__error" id="email-input-error">
                     error text
                   </span>
+                  <input className="form__input input__text-field" type="email" placeholder="e.g. stephenking@lorem.com" name="email" id="email-input" aria-describedby="email-input-error" />
                 </label>
-                <input className="form__input" type="email" placeholder="e.g. stephenking@lorem.com" name="email" id="email-input" aria-describedby="email-input-error" />
                 {/*  */}
-                <label className="form__labels" htmlFor="number-input">
-                  Phone Number
-                  <span className="form__error-text" id="number-input-error">
+                <label className="form__input-container input" htmlFor="number-input">
+                  <span className="form__label input__label">Phone Number</span>
+                  <span className="form__error input__error" id="number-input-error">
                     error text
                   </span>
+                  <input className="form__input input__text-field" type="number" placeholder="e.g. +1 234 567 890" name="number" id="number-input" aria-describedby="number-input-error" />
                 </label>
-                <input className="form__input" type="number" placeholder="e.g. +1 234 567 890" name="number" id="number-input" aria-describedby="number-input-error" />
                 {/*  */}
               </fieldset>
             </div>
-            <div className="form__cta-button-group">
+            <div className="form__cta-group">
               <button className="form__cta-button cta-button cta-button--text">Go Back</button>
               <button className="form__cta-button cta-button cta-button--contained">Next Step</button>
             </div>
