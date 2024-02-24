@@ -1,0 +1,52 @@
+.TextInput {
+  --_input-error-color: var(--clr-p-red-500);
+  --_input-label-color: var(--clr-p-blue-900);
+  --_input-label-fs: calc(var(--fs-300) + .1rem);
+  --_input-border-color: var(--clr-n-gray-200);
+  --_input-border-color-focus: var(--clr-p-blue-400);
+  --_input-placeholder-color: var(--clr-n-gray-400);
+  --_input-radio-checked-color: var(--clr-n-magnolia-100);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  max-width: 450px;
+
+  &__error {
+    justify-self: end;
+    font-weight: var(--fw-bold);
+    color: var(--_input-error-color);
+  }
+
+  &__error[aria-hidden="true"] {
+    visibility: hidden;
+  }
+
+  &__label {
+    text-transform: capitalize;
+    color: var(--_input-label-color);
+    font-weight: var(--fw-medium);
+  }
+
+  &__label,
+  &__error {
+    font-size: var(--_input-label-fs);
+    margin-bottom: .30em;
+  }
+
+  &__controls {
+    grid-column: 1/-1;
+    text-indent: .8em;
+    padding-block: .75em;
+    border: 1px solid var(--_input-border-color);
+    border-radius: calc(var(--_w-border-radius)/2);
+    transition: all 250ms ease;
+
+    &:hover {
+      --_input-border-color: var(--_input-border-color-focus)
+    }
+
+    &:focus {
+      outline: 1px solid var(--_input-border-color-focus);
+    }
+  }
+}

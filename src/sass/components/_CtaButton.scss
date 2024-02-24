@@ -1,0 +1,42 @@
+.CtaButton {
+  --_btn-background-color: var(--clr-p-blue-900);
+  --_btn-border-radius: calc(var(--_w-border-radius)/2);
+  --_btn-color: var(--clr-n-white-100);
+  min-width: 120px;
+  padding: .75em 1.5em;
+  font-size: var(--fs-400);
+  font-weight: var(--fw-medium);
+  text-transform: capitalize;
+  border: 0px;
+  border-radius: var(--_btn-border-radius);
+  background-color: var(--_btn-background-color);
+  color: var(--_btn-color);
+  cursor: pointer;
+  transition: all 250ms ease;
+
+  // @include mq(tablet, up) {
+  //   --_btn-border-radius: calc(var(--_w-border-radius)/4);
+
+  // }
+
+  &--contained {
+    &:hover {
+      --_btn-background-color: var(--clr-p-blue-400);
+      opacity: 0.6;
+    }
+
+    &:focus {
+      outline: 2px solid var(--_btn-background-color);
+      outline-offset: 4px;
+    }
+  }
+
+  &--text {
+    --_btn-background-color: none;
+    --_btn-color: var(--clr-n-gray-400);
+
+    &:hover {
+      --_btn-color: var(--clr-p-blue-900);
+    }
+  }
+}

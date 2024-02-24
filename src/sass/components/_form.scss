@@ -22,6 +22,14 @@
     border: 0;
   }
 
+  &__step--1 {
+    display: none;
+  }
+
+  // &__step--2 {
+  //   // display: none;
+  // }
+
   &__step-header {
     padding: 0;
     border: 0;
@@ -43,14 +51,22 @@
     margin-bottom: 1em;
   }
 
+  &__radio-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+
+    @include mq(tablet, up) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+    }
+  }
+
   &__input-container {
     --_flow-spacer: 1.2em;
     display: block;
   }
 
-  &__input-container {
-    display: block;
-  }
 
   &__inputs,
   &__cta-group {
@@ -83,9 +99,5 @@
       padding-inline: 1em;
       --_form-input-max-width: none;
     }
-  }
-
-  &__input:focus {
-    outline: 1px solid var(--_input-border-color-focus);
   }
 }

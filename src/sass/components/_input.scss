@@ -6,9 +6,32 @@
   --_input-border-color-focus: var(--clr-p-blue-400);
   --_input-border-radius: calc(var(--_w-border-radius)/2);
   --_input-placeholder-color: var(--clr-n-gray-400);
+  --_input-radio-checked-color: var(--clr-n-magnolia-100);
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
+  border-radius: var(--_input-border-radius);
+
+  &--radio {
+    --_flow-spacer: 0em;
+    display: block;
+    position: relative;
+    isolation: isolate;
+  }
+
+  &__radio {
+    position: absolute;
+    display: block;
+    inset: 0;
+    appearance: none;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  &__radio:checked {
+    background-color: var(--_input-radio-checked-color);
+  }
+
 
   &__error {
     justify-self: end;
@@ -31,8 +54,7 @@
     grid-column: 1/-1;
     text-indent: .8em;
     padding-block: .75em;
-    border: 1px solid var(--_input-border-color);
-    border-radius: var(--_input-border-radius);
+    border-radius: inherit;
     transition: all 250ms ease;
   }
 
@@ -40,5 +62,17 @@
   &__text-field::placeholder {
     font-weight: var(--fw-medium);
     color: var(--_input-placeholder-color);
+  }
+
+  input {
+    border: 1px solid var(--_input-border-color);
+  }
+
+  input:hover {
+    --_input-border-color: var(--_input-border-color-focus)
+  }
+
+  input:focus {
+    outline: 1px solid var(--_input-border-color-focus);
   }
 }

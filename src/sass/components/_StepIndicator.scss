@@ -1,0 +1,23 @@
+.StepIndicator {
+  --_sl-step-icon-size: 35px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  text-transform: uppercase;
+
+  &__icon {
+    grid-row: 1/-1;
+    align-items: center;
+    align-self: center;
+    display: grid;
+    place-items: center;
+    width: var(--_sl-step-icon-size);
+    aspect-ratio: 1;
+    border: 1px solid black;
+    border-radius: 50%;
+    font-size: var(--fs-400);
+    font-weight: var(--fw-medium);
+    color: var(--_sl-step-icon-color);
+    background-color: var(--_sl-step-icon-background-color);
+  }
+}

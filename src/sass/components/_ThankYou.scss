@@ -1,0 +1,19 @@
+.ThankYou {
+  text-align: center;
+
+  &__message {
+    font-size: calc(var(--fs-700) - .35rem);
+    color: var(--clr-p-blue-900);
+  }
+
+  &__description {
+    font-size: var(--fs-400);
+    color: var(--clr-n-gray-400);
+    max-width: 440px;
+    margin-inline: auto;
+  }
+
+  &__icon {
+    margin-inline: auto;
+  }
+}

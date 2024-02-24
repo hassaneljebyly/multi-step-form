@@ -1,0 +1,55 @@
+.ToggleSwitchInput {
+  --selected-color: var(--clr-p-blue-900);
+  --unselected-color: var(--clr-n-gray-400);
+  --_switch-left-pos: .25em;
+  font-size: calc(var(--fs-300) + .1rem);
+  font-weight: var(--fw-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 1em;
+  border-radius: calc(var(--_w-border-radius)/2);
+  cursor: pointer;
+  background-color: var(--clr-n-magnolia-100);
+
+  max-width: 450px;
+
+  &__right-choice {
+    color: var(--unselected-color);
+  }
+
+  &__left-choice {
+    color: var(--selected-color);
+  }
+
+  &:has(:checked) {
+    --unselected-color: var(--clr-p-blue-900);
+    --selected-color: var(--clr-n-gray-400);
+    --_switch-left-pos: calc(70% - .25em);
+  }
+
+  &__controls {
+    --_size: 40px;
+    --_switch-size: calc((var(--_size)/2)*.7); // 70% of the size
+    appearance: none;
+    width: var(--_size);
+    aspect-ratio: 2/1;
+    margin-inline: 1.55em;
+    background-color: var(--clr-p-blue-900);
+    border-radius: var(--_size);
+    cursor: pointer;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: var(--_switch-size);
+      aspect-ratio: 1;
+      top: 50%;
+      left: var(--_switch-left-pos);
+      transform: translateY(-50%);
+      border-radius: 50%;
+      background-color: var(--clr-n-white-100);
+    }
+  }
+}
