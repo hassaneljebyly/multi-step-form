@@ -1,9 +1,37 @@
+@use '../abstracts/mixins' as *;
+
 .StepIndicator {
-  --_sl-step-icon-size: 35px;
+  --_flow-spacer: 1.40em;
+  --_sl-step-icon-size: 33px;
+  --_icon-color: var(--clr-n-white-100);
+  --_icon-background-color: transparent;
+  --_icon-border-color: var(--clr-n-white-100);
+  width: max-content;
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: var(--_sl-step-icon-size) auto;
   grid-template-rows: repeat(2, auto);
+  gap: 0 1em;
   text-transform: uppercase;
+
+  @include mq(tablet, up) {
+    --_flow-spacer: 0;
+    display: inline-block;
+  }
+
+
+
+  &>*:not(.StepIndicator__icon) {
+    @include mq(tablet, up) {
+      display: none;
+    }
+  }
+
+
+  &--active {
+    --_icon-color: var(--clr-p-blue-900);
+    --_icon-background-color: var(--clr-p-blue-100);
+    --_icon-border-color: var(--clr-p-blue-100);
+  }
 
   &__icon {
     grid-row: 1/-1;
@@ -13,11 +41,23 @@
     place-items: center;
     width: var(--_sl-step-icon-size);
     aspect-ratio: 1;
-    border: 1px solid black;
+    border: 1px solid var(--_icon-border-color);
     border-radius: 50%;
     font-size: var(--fs-400);
     font-weight: var(--fw-medium);
-    color: var(--_sl-step-icon-color);
-    background-color: var(--_sl-step-icon-background-color);
+    color: var(--_icon-color);
+    background-color: var(--_icon-background-color);
+  }
+
+  &__number {
+    color: var(--clr-p-blue-200);
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-300);
+  }
+
+  &__title {
+    color: var(--clr-n-alabaster-100);
+    font-weight: var(--fw-bold);
+    font-size: calc(var(--fs-300) + .18rem);
   }
 }

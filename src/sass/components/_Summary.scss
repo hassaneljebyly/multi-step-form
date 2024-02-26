@@ -1,15 +1,20 @@
 .Summary {
   max-width: 450px;
 
-  hr {
-    border: 0;
-    border-top: 1px solid var(--clr-n-gray-200);
-    width: 90%;
-    margin-inline: auto;
-  }
-
   &__section {
     padding: 1em 1.25em;
+    position: relative;
+
+    &:first-child::after {
+      content: "";
+      position: absolute;
+      width: 90%;
+      height: 1px;
+      bottom: 0;
+      left: 50%;
+      translate: -50%;
+      background-color: var(--clr-n-gray-200);
+    }
   }
 
   &__section--plan {

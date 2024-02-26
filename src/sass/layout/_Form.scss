@@ -1,0 +1,41 @@
+@use "../abstracts/mixins" as *;
+
+.Form {
+  --_inner-maw-width: 450px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__fieldset-group,
+  &__button-group {
+    width: 100%;
+    max-width: var(--_inner-maw-width);
+  }
+
+  &__fieldset-group {
+    margin-inline: 1em;
+    margin-bottom: auto;
+    height: max-content;
+    display: grid;
+    align-items: start;
+
+    &>* {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+  }
+
+  &__button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    background-color: var(--clr-n-white-100);
+    padding-block: 1em;
+
+    @include mq(tablet, up) {
+      max-width: none;
+      padding: 1em;
+    }
+  }
+}

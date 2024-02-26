@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as *;
+
 .RadioInput {
   --_flow-spacer: 0em;
   padding: 1.1em 1em;
@@ -6,9 +8,29 @@
   background-color: var(--clr-n-white-100);
   position: relative;
 
-  max-width: 138px;
-  width: 100%;
-  margin-top: 1em;
+
+  @include mq(tablet, up) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    gap: 0em 1em;
+    padding: .9em 1em;
+
+    &__icon {
+      grid-row: 1/-1;
+      align-self: center;
+    }
+
+    &__label,
+    &__helper-text {
+      grid-column: 2/-1;
+    }
+
+    &__label {
+      margin-top: 0;
+    }
+  }
 
   &:has(:checked) {
     background-color: var(--clr-n-magnolia-100);
@@ -51,5 +73,4 @@
     border-radius: inherit;
     cursor: pointer;
   }
-
 }

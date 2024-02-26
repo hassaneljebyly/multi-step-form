@@ -1,0 +1,66 @@
+@use "../abstracts/mixins" as *;
+
+.Fieldset {
+
+  margin: 0;
+  padding: 0;
+  padding-bottom: 1.5em;
+  border: 0;
+  background-color: var(--clr-n-white-100);
+  position: relative;
+
+  @include mq(tablet, up) {
+    border-radius: calc(var(--_w-border-radius)/2);
+    padding-inline: 1em;
+    transform: translateY(calc(-1*(var(--_side-panel-mobile-height)/2) + .8em));
+  }
+
+  @include mq(mobile, up) {
+    margin-inline: 1em;
+    transform: translateY(calc(-1*(var(--_side-panel-mobile-height)/2) + .8em));
+  }
+
+  &__legend {
+    display: block;
+    width: 100%;
+    margin-bottom: 2.50em;
+  }
+
+  &__title {
+    margin-top: 1.2em;
+    font-size: calc(var(--fs-600) + .2rem);
+    color: var(--clr-p-blue-900);
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+
+  &__description {
+    font-size: var(--fs-400);
+    color: var(--clr-n-gray-400);
+  }
+
+  &__radio-input {
+    display: grid;
+    grid-template-columns: repeat(3, 138px);
+    justify-content: space-between;
+
+    @include mq(tablet, up) {
+      grid-template-columns: 1fr;
+      gap: .75em;
+    }
+  }
+
+  &__switch-input {
+    margin-top: 2em;
+  }
+
+  &__text-input {
+    --_flow-spacer: 1.1em;
+  }
+
+  &__checkbox-input {
+    --_flow-spacer: 1em;
+  }
+}

@@ -1,45 +1,78 @@
 @use '../abstracts/mixins' as *;
 
-.wrapper {
+.Wrapper {
   --_w-padding-x: 1em;
   --_w-padding-y: 1em;
-  --_w-height: 600px;
+  --_side-panel-desktop-width: 275px;
+  --_side-panel-mobile-height: 174px;
   --_w-border-radius: 15px;
-  --_w-side-panel-min-height: 173px;
-  --_w-background-color: var(--clr-n-white-100);
-  --_w-box-shadow: var(--clr-n-gray-200) 0px 8px 24px;
-  --_w-flex-direction: row;
-  --_column-left-max-width: 272px;
-
-  display: flex;
-  flex-direction: var(--_w-flex-direction);
-  padding-inline: var(--_w-padding-x);
-  padding-block: var(--_w-padding-y);
-  max-width: 943px;
-  width: 100%;
-  height: var(--_w-height);
+  background-color: var(--clr-n-white-100);
   border-radius: var(--_w-border-radius);
-  background-color: var(--_w-background-color);
-  box-shadow: var(--_w-box-shadow);
+  width: 100%;
+  max-width: 940px;
+  height: 600px;
+  padding-inline: var(--_w-padding-x);
+  padding-block: var(--_w-padding-x);
+  display: grid;
+  grid-template-columns: var(--_side-panel-desktop-width) auto;
+  gap: 0 1em;
 
   @include mq(tablet, up) {
-    --_w-flex-direction: column;
-    --_column-left-max-width: none;
     --_w-padding-x: 0;
     --_w-padding-y: 0;
-    --_w-height: 100dvh;
-    --_w-background-color: transparent;
-    box-shadow: none;
+    height: 100dvh;
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--_side-panel-mobile-height) auto;
+    border-radius: 0;
   }
 
+  &__side-panel {
+    padding-left: 2em;
+    padding-top: 2.1em;
+    user-select: none;
+    border-radius: calc(var(--_w-border-radius)/2);
+    // backup color 
+    background-color: var(--clr-p-blue-400);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
 
-  &__column--left {
-    flex-shrink: 0;
-    width: 100%;
-    max-width: var(--_column-left-max-width);
+
+    @include mq(tablet, up) {
+      padding-left: 0;
+      display: flex;
+      justify-content: center;
+      border-radius: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("../assets/images/bg-sidebar-desktop.svg");
+
+      @include mq(tablet, up) {
+        background-image: url("../assets/images/bg-sidebar-mobile.svg");
+      }
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: -1;
+    }
+
+    .StepsList {
+      @include mq(tablet, up) {
+        display: flex;
+        gap: 1em;
+      }
+    }
   }
 
-  &__column--right {
-    width: 100%;
+  &__form-container {
+    background-color: var(--clr-n-white-100);
+
+    @include mq(tablet, up) {
+      background-color: var(--clr-n-magnolia-100);
+    }
   }
 }

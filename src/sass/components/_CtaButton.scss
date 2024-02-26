@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as *;
+
 .CtaButton {
   --_btn-background-color: var(--clr-p-blue-900);
   --_btn-border-radius: calc(var(--_w-border-radius)/2);
@@ -14,12 +16,13 @@
   cursor: pointer;
   transition: all 250ms ease;
 
-  // @include mq(tablet, up) {
-  //   --_btn-border-radius: calc(var(--_w-border-radius)/4);
-
-  // }
+  @include mq(tablet, up) {
+    --_btn-border-radius: calc(var(--_w-border-radius)/4);
+  }
 
   &--contained {
+    margin-left: auto;
+
     &:hover {
       --_btn-background-color: var(--clr-p-blue-400);
       opacity: 0.6;
@@ -32,8 +35,11 @@
   }
 
   &--text {
+    margin-right: auto;
     --_btn-background-color: none;
     --_btn-color: var(--clr-n-gray-400);
+    padding-left: 0;
+    text-align: left;
 
     &:hover {
       --_btn-color: var(--clr-p-blue-900);

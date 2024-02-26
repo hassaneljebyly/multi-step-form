@@ -1,5 +1,6 @@
 .TextInput {
   --_input-error-color: var(--clr-p-red-500);
+  --_input-error-visibility: hidden;
   --_input-label-color: var(--clr-p-blue-900);
   --_input-label-fs: calc(var(--fs-300) + .1rem);
   --_input-border-color: var(--clr-n-gray-200);
@@ -9,16 +10,16 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
-  max-width: 450px;
+  &:has(&__error[aria-hidden="false"]) {
+    --_input-error-visibility: visible;
+    --_input-border-color: var(--_input-error-color);
+  }
 
   &__error {
     justify-self: end;
     font-weight: var(--fw-bold);
     color: var(--_input-error-color);
-  }
-
-  &__error[aria-hidden="true"] {
-    visibility: hidden;
+    visibility: var(--_input-error-visibility);
   }
 
   &__label {
@@ -32,6 +33,7 @@
     font-size: var(--_input-label-fs);
     margin-bottom: .30em;
   }
+
 
   &__controls {
     grid-column: 1/-1;
@@ -49,4 +51,5 @@
       outline: 1px solid var(--_input-border-color-focus);
     }
   }
+
 }

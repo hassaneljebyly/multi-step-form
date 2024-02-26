@@ -1,5 +1,28 @@
+@use "../abstracts/mixins" as *;
+
 .ThankYou {
-  text-align: center;
+  padding-bottom: 1.5em;
+  height: 100%;
+  max-width: 600px;
+  margin-inline: auto;
+  background-color: var(--clr-n-white-100);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include mq(tablet, up) {
+    height: 400px;
+    border-radius: calc(var(--_w-border-radius)/2);
+    padding-inline: 1em;
+    transform: translateY(calc(-1*(var(--_side-panel-mobile-height)/2) + .8em));
+  }
+
+  @include mq(mobile, up) {
+    margin-inline: 1em;
+    transform: translateY(calc(-1*(var(--_side-panel-mobile-height)/2) + .8em));
+  }
 
   &__message {
     font-size: calc(var(--fs-700) - .35rem);
@@ -10,10 +33,10 @@
     font-size: var(--fs-400);
     color: var(--clr-n-gray-400);
     max-width: 440px;
-    margin-inline: auto;
+    text-align: center;
   }
 
   &__icon {
-    margin-inline: auto;
+    margin-top: 1.6em;
   }
 }

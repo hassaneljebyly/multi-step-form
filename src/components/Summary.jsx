@@ -9,7 +9,6 @@ export default function Summary() {
           change
         </a>
       </div>
-      <hr />
       <div className="Summary__section Summary__section--addons flow">
         <p className="Summary__row">
           <span className="Summary__item">online service</span> <span className="Summary__price">+$10/yr</span>
