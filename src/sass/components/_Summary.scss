@@ -1,16 +1,15 @@
 .Summary {
-  max-width: 450px;
 
-  &__section {
+  &__section:has(.Summary__row) {
     padding: 1em 1.25em;
     position: relative;
 
-    &:first-child::after {
+    &:not(:first-child, :last-child):after {
       content: "";
       position: absolute;
       width: 90%;
       height: 1px;
-      bottom: 0;
+      top: 0;
       left: 50%;
       translate: -50%;
       background-color: var(--clr-n-gray-200);

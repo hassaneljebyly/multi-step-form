@@ -1,15 +1,7 @@
 import Fieldset from './Fieldset';
 import RadioInput from './../RadioInput';
 import ToggleSwitchInput from './../ToggleSwitchInput';
-import arcadeSVG from '../../assets/images/icon-arcade.svg';
-import advancedSVG from '../../assets/images/icon-advanced.svg';
-import proSVG from '../../assets/images/icon-pro.svg';
-
-let radioInputs = [
-  { id: 'arcade', icon: arcadeSVG, billingCycle: 'mo', billingCycleFee: '$9' },
-  { id: 'advanced', icon: advancedSVG, billingCycle: 'mo', billingCycleFee: '$12' },
-  { id: 'pro', icon: proSVG, billingCycle: 'mo', billingCycleFee: '$15' },
-];
+import { radioInputs } from '../../formContent';
 
 export default function PlanSelection() {
   return (

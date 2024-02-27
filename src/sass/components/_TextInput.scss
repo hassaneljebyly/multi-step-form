@@ -34,6 +34,10 @@
     margin-bottom: .30em;
   }
 
+  &__error::first-letter {
+    text-transform: capitalize;
+  }
+
 
   &__controls {
     grid-column: 1/-1;

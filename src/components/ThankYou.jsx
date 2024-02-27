@@ -1,5 +1,9 @@
+import { useEffect } from 'react';
 import thankYouIcon from '../assets/images/icon-thank-you.svg';
 export default function ThankYou() {
+  useEffect(() => {
+    localStorage.removeItem('initialFormValues');
+  }, []);
   return (
     <div className="ThankYou flow">
       <img className="ThankYou__icon" src={thankYouIcon} alt="" />

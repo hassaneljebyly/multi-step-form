@@ -1,9 +1,12 @@
 import Wrapper from './components/layout/Wrapper';
+import { FormContextProvider } from './context/FormContextProvider';
 
 function App() {
   return (
     <main>
-      <Wrapper />
+      <FormContextProvider>
+        <Wrapper />
+      </FormContextProvider>
     </main>
   );
 }

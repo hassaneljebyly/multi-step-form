@@ -3,12 +3,12 @@ import PersonalInfo from './PersonalInfo';
 import PlanSelection from './PlanSelection';
 import AddOnsSelection from './AddOnsSelection';
 import FinishingUp from './FinishingUp';
-import { content } from './../../fieldSetContent';
+import { content, steps } from './../../formContent';
 
 export default function Form() {
-  const { currentStep, handleStepNext, handleStepBack } = useFormContext();
-  let showBackButton = currentStep > 1;
-  let showConfirm = currentStep === 4;
+  const { formState, handleStepNext, handleStepBack } = useFormContext();
+  let showBackButton = formState.currentStep > 1;
+  let showConfirm = formState.currentStep === steps.length;
 
   function setStepFieldSet(currentStep) {
     switch (currentStep) {
@@ -31,7 +31,7 @@ export default function Form() {
 
   return (
     <form className="Form" action="">
-      <div className="Form__fieldset-group">{setStepFieldSet(currentStep, content)}</div>
+      <div className="Form__fieldset-group">{setStepFieldSet(formState.currentStep, content)}</div>
       <div className="Form__button-group">
         {showBackButton && (
           <button className="CtaButton CtaButton--text" onClick={handleStepBack}>
