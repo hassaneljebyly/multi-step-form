@@ -26,6 +26,6 @@
   font-family: "#{$font-family}";
 
   @include mq(mobile, up) {
-    font-size: 13px;
+    font-size: 14px;
   }
 }

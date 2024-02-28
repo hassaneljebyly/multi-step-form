@@ -16,6 +16,7 @@
   display: grid;
   grid-template-columns: var(--_side-panel-desktop-width) auto;
   gap: 0 1em;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 
   @include mq(tablet, up) {
     --_w-padding-x: 0;
