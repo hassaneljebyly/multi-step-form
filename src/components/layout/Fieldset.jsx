@@ -3,8 +3,10 @@ import { content } from '../../formContent';
 import { useFormContext } from './../../hooks/useFormContext';
 
 export default function Fieldset({ children }) {
-  const { formState } = useFormContext();
-  const { title, description } = content[formState.currentStep];
+  const {
+    formState: { currentStep },
+  } = useFormContext();
+  const { title, description } = content[currentStep];
   return (
     <fieldset className="Fieldset">
       {/* wrapping legend in span makes legend go inside fieldset borders */}

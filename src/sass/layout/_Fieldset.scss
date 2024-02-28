@@ -1,5 +1,6 @@
 @use "../abstracts/mixins" as *;
 
+
 .Fieldset {
 
   margin: 0;
@@ -8,6 +9,9 @@
   border: 0;
   background-color: var(--clr-n-white-100);
   position: relative;
+  transform-origin: bottom;
+  animation: fade-in 500ms ease-in forwards;
+
 
   @include mq(tablet, up) {
     border-radius: calc(var(--_w-border-radius)/2);
@@ -63,5 +67,20 @@
 
   &__checkbox-input {
     --_flow-spacer: 1em;
+  }
+}
+
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

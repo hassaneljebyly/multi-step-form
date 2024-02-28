@@ -30,6 +30,7 @@ const useFormState = () => {
     formState.currentStep > 1
       ? setFormState({
           ...formState,
+          CSSTransitionInState: !formState.CSSTransitionInState,
           currentStep: formState.currentStep - 1,
         })
       : '';
@@ -51,6 +52,7 @@ const useFormState = () => {
           ? setFormState({
               ...formState,
               textFieldErrors: null,
+              CSSTransitionInState: !formState.CSSTransitionInState,
               currentStep: formState.currentStep + 1,
             })
           : '';
