@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { initialFormValues } from '../formContent';
+import { initialFormValues, steps } from '../formContent';
 import * as yup from 'yup';
 
 // schema for yup validation
@@ -9,13 +9,13 @@ const schema = yup.object().shape({
   phoneInput: yup.string().max(15).required('this field is required'),
 });
 
-const useFormState = () => {
-  const initialFormState = JSON.parse(localStorage.getItem('initialFormValues')) || initialFormValues;
+const initialFormState = JSON.parse(localStorage.getItem('initialFormValues')) || initialFormValues;
 
+const useFormState = () => {
   const [formState, setFormState] = useState(initialFormState);
 
   useEffect(() => {
-    localStorage.setItem('initialFormValues', JSON.stringify(formState));
+    formState.currentStep <= steps.length ? localStorage.setItem('initialFormValues', JSON.stringify(formState)) : localStorage.setItem('initialFormValues', JSON.stringify(initialFormState));
   }, [formState]);
 
   function handleEditPlan(e) {
