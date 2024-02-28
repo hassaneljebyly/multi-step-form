@@ -34,7 +34,7 @@ export default function Form() {
   }
 
   return (
-    <form className="Form" action="">
+    <form className="Form">
       <div className="Form__fieldset-group">{setStepFieldSet(currentStep, content)}</div>
       <div className="Form__button-group">
         {showBackButton && (

@@ -43,6 +43,9 @@
     grid-column: 1/-1;
     text-indent: .8em;
     padding-block: .75em;
+    font-size: var(--fs-400);
+    font-weight: var(--fw-medium);
+    color: var(--clr-p-blue-900);
     border: 1px solid var(--_input-border-color);
     border-radius: calc(var(--_w-border-radius)/2);
     transition: all 250ms ease;

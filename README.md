@@ -36,14 +36,13 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://hassaneljebyly.github.io/multi-step-form/)
+- [Solution URL](https://www.frontendmentor.io/solutions/multi-step-form-react-scss-vite-yup-form-validation-SeC-QQFim1)
 - [Live Preview](https://hassaneljebyly.github.io/multi-step-form/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
 - CSS Grid

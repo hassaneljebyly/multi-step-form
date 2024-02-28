@@ -9,10 +9,10 @@ export default function TextInput({ id, label, type, placeHolder }) {
       <label className="TextInput__label" htmlFor={id}>
         {label.replace('-', ' ')}
       </label>
-      <span className="TextInput__error" id="errorMessage" aria-hidden={errorInputID != id}>
+      <span className="TextInput__error" id={id + '-errorMessage'} aria-hidden={errorInputID != id}>
         {message}
       </span>
-      <input className="TextInput__controls" type={type} id={id} name={id} placeholder={placeHolder} aria-describedby="errorMessage" aria-required="true" value={formState[id]} onChange={handleChange} />
+      <input className="TextInput__controls" type={type} id={id} name={id} placeholder={placeHolder} aria-describedby={id + '-errorMessage'} aria-required="true" value={formState[id]} onChange={handleChange} />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import { FormContextProvider } from './context/FormContextProvider';
 function App() {
   return (
     <main>
+      <h1 className="sr-only">multi step form</h1>
       <FormContextProvider>
         <Wrapper />
       </FormContextProvider>
